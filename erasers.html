@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erasers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+            <style>
+/* -------------------
+    Media Queries
+-------------------- */
+/* Tablets (768px to 992px) */
+.slider-container{
+  margin-top: 20px;
+}
+.slider{
+  margin-top: 90px;
+}
+@media (max-width: 992px) {
+  .slider-container {
+    height: 55vh; /* Responsive height */
+    margin-top: 90px; /* Adjust margin to clear navbar */
+  }
+}
+
+/* Phones (600px and down) */
+@media (max-width: 600px) {
+  .slider-container {
+    height: 70vh;
+    margin-top: 100px;
+  }
+}
+</style>
+</head>
+<body>
+      <!--Navbar-->
+<div class="header">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/logo 2.png" width="170px">
+      </div>
+
+      <nav>
+        <ul id="navbar">
+          <li class="hideOnMobile"><a href="#home">Home</a></li>
+          <li class="hideOnMobile"><a href="#latest-products">Products</a></li>
+          <li class="hideOnMobile"><a href="index.html#about">About</a></li>
+          <li class="hideOnMobile"><a href="#footer">Contact</a></li>
+          <li class="hideOnMobile"><a href="#footer">Account</a></li>
+          <li class="menu-button" onclick="showSidebar()">
+            <button id="menu-open-button" class="fas fa-bars"></button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ✅ Search box -->
+      <div class="search-box hideOnMobile">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="searchBrands()"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+
+    <!-- Floating Cart Icon -->
+<div class="cart" onclick="toggleCart()">
+  <i class="fa fa-shopping-cart">
+    <p id="count">0</p>
+  </i>
+</div>
+
+<!-- Cart Sidebar -->
+<div class="container">
+  <div id="root"></div>
+  <aside class="sidebar-left" id="cartSidebar">
+    <div class="head"><p>My Cart</p></div>
+    <div id="cartItem">Your Cart is empty</div>
+      <button onclick="clearCart()" class="clear-cart-btn">Clear Cart</button>
+    <div class="foot">
+      <h3>Total</h3>
+      <h2 id="total">KES 0.00</h2>
+    </div>
+
+     <button  class="pay-via">Pay Via</button>
+    <!-- Payment Methods -->
+    <div class="footer-column">
+      <h4>Payment Methods</h4>
+      <div class="payment-item">
+        <a href="tel:*234*1*123456#" class="payment-btn" title="Pay via M-Pesa Till" id="mpesa">
+           <img src="images/mpesa logo.png" alt="mpesa">
+        </a>
+       <a href="visa.html" class="payment-btn" title="Pay with Visa" id="visa">
+        <img src="images/visa logo.jpg" alt="visa">
+      </a>
+        <a href="https://www.paypal.me/yourusername" class="payment-btn" title="Pay with PayPal" target="_blank" id="paypal">
+          <img src="images/paypal.png" alt="paypal">
+        </a>
+         <a href="tel:*222*1*654321#" class="payment-btn" title="Pay via Airtel Money" id="airtel">
+          <img src="images/airtel logo.png" alt="airtel">
+        </a>
+        
+      </div>
+    </div>
+
+    <button onclick="closeCart()" class="close-cart-btn">Close Cart <i class="fa fa-window-close"></i></button>
+
+
+    <!-- Sidebar for mobile -->
+    <ul class="sidebar">
+      <li class="close-button" onclick="hideSidebar()">
+        <button id="menu-close-button" class="fas fa-times"></button>
+      </li>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="#latest-products">Products</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="#footer">Contact</a></li>
+      <li><a href="#footer">Account</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- Auto Image Slider -->
+<div class="slider-container">
+  <div class="slider">
+    <img src="images/Erasers slide1.jpg" class="slide active" alt="Image 1">
+    <img src="images/Erasers slide2.jpg" class="slide" alt="Image 2">
+    <img src="images/Erasers slide3.jpg" class="slide" alt="Image 3">
+  </div>
+<!-- Navigation Buttons -->
+  <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+  <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+  <!-- Indicators -->
+  <div class="dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+  </div>
+</div>
+
+
+<!-- Latest Products-->
+  <section class="latest-products" id="latest-products">
+    <h2 class="title">Top Smooth Erasers</h2>
+    <div class="product-grid">
+
+<!-- Product Card 1 -->
+<div class="product-card">
+  <img src="images/Gomme eraser.png" alt="gomme" />
+  <h4>Gomme Double Colour Eraser</h4>
+  <p class="price">KES 20</p>
+  <button class="add-to-cart"
+          data-name="Gomme Double Colour Eraser"
+          data-price="20"
+          data-image="images/Gomme eraser.png">
+    <i class="fas fa-cart-arrow-down"></i> Add to Cart
+  </button>
+</div>
+
+<!-- Product Card 2 -->
+<div class="product-card">
+  <img src="images/doms eraser.jpg" alt="doms" />
+  <h4>Doms Eraser</h4>
+  <p class="price">KES 20</p>
+  <button class="add-to-cart"
+          data-name="Doms Eraser"
+          data-price="20"
+          data-image="images/doms eraser.jpg">
+    <i class="fas fa-cart-arrow-down"></i> Add to Cart
+  </button>
+</div>
+
+<!-- Product Card 3 -->
+<div class="product-card">
+  <img src="images/bright erasers.jpg" alt="bright" />
+  <h4>Bright Eraser All Colours</h4>
+  <p class="price">KES 50</p>
+  <button class="add-to-cart"
+          data-name="Bright Eraser All Colours"
+          data-price="50"
+          data-image="images/bright erasers.jpg">
+    <i class="fas fa-cart-arrow-down"></i> Add to Cart
+  </button>
+</div>
+
+
+      
+    </div>
+  </section>
+
+
+
+<!-- Footer Section -->
+<footer class="footer" id="footer">
+  <div class="footer-container">
+
+    <!-- Company Info -->
+    <div class="footer-column">
+      <h3>Candy Land Shop</h3>
+      <p>Your best online shopping destination. We deliver happiness in every package!</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#Shop By Brand">Brands</a></li>
+        <li><a href="#top picks">Top Picks</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#Latest Products">Latest Products</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-column">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="contactsupport.html">Contact Us</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="returns.html">Returns</a></li>
+        <li><a href="shipping.html">Shipping Info</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-column">
+      <h4>Reach Us</h4>
+      <p><i class="fas fa-phone"></i> +254 769-610343</p>
+      <p><i class="fas fa-envelope"></i> allamanojoseph00@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+    </div>
+
+    <!-- Payment Methods -->
+    <div class="footer-column">
+      <h4>Payment Methods</h4>
+      <div class="payment-item">
+        <a href="tel:*234*1*123456#" class="payment-btn" title="Pay via M-Pesa Till" id="mpesa">
+           <img src="images/mpesa logo.png" alt="mpesa">
+        </a>
+       <a href="visa.html" class="payment-btn" title="Pay with Visa" id="visa">
+        <img src="images/visa logo.jpg" alt="visa">
+      </a>
+        <a href="https://www.paypal.me/yourusername" class="payment-btn" title="Pay with PayPal" target="_blank" id="paypal">
+          <img src="images/paypal.png" alt="paypal">
+        </a>
+         <a href="tel:*222*1*654321#" class="payment-btn" title="Pay via Airtel Money" id="airtel">
+          <img src="images/airtel logo.png" alt="airtel">
+        </a>
+        
+      </div>
+    </div>
+  </div>
+
+ <!-- Social Media (Below Columns) -->
+  <div class="footer-social">
+    <h4>Follow Us</h4>
+    <div class="social-link-list">
+      <a href="https://facebook.com/Manor.Manor"><i class="fab fa-facebook" style="color: #7b3cf8;"></i></a>
+      <a href="https://instagram.com/m_anor_0"><i class="fab fa-instagram" style="color: red;"></i></a>
+      <a href="https://x.com/bitsmanor"><i class="fab fa-x-twitter" style="color: #222;"></i></a>
+      <a href=" https://linkedin.com/in/allamano-joseph"><i class="fab fa-linkedin"style="color: blue;"></i></a>
+      <a href="https://www.tiktok.com/@mano_r72"><i class="fab fa-tiktok" style="color: #210404;"></i></a>
+      <a href="https://www.threads.net/@m_anor_0"><i class="fab fa-threads" style="color: #230404;"></i></a>
+      <a href="https://wa.me/254769610343?text=Hello%20Allamano%2C%20I%20visited%20your%20website!" target="_blank"><i class="fab fa-whatsapp" style="color: rgb(2, 231, 2);"></i></a> 
+      <a href="#"><i class="fab fa-youtube" style="color:red;"></i></a>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Candy Land Shop. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

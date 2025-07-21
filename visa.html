@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visa Payment</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background-image: url("images/Contactsupport background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.visa-form-container {
+  background: rgba(196, 246, 125, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  backdrop-filter: blur(2px);
+}
+
+.visa-form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+  color: #1a1a1a;
+}
+
+.visa-form-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.visa-form-container button {
+  width: 100%;
+  padding: 14px;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.visa-form-container button:hover {
+  background-color: #0f5ad3;
+}
+
+.visa-form-container a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.visa-form-container a:hover {
+  text-decoration: underline;
+}
+
+/* Small devices (phones ≤ 600px) */
+@media (max-width: 600px) {
+  .visa-form-container {
+    padding: 20px;
+  }
+
+  .visa-form-container h2 {
+    font-size: 22px;
+  }
+
+  .visa-form-container input,
+  .visa-form-container button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  body {
+    padding: 15px;
+  }
+}
+
+/* Medium devices (tablets 601px – 992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  .visa-form-container {
+    padding: 25px;
+  }
+
+  .visa-form-container h2 {
+    font-size: 24px;
+  }
+
+  .visa-form-container input,
+  .visa-form-container button {
+    font-size: 16px;
+  }
+}
+</style>
+
+</head>
+<body>
+  <div class="visa-form-container">
+    <h2>Visa Payment</h2>
+    <form>
+      <input type="text" placeholder="Card Number" required />
+      <input type="text" placeholder="Name on Card" required />
+      <input type="text" placeholder="Expiry Date (MM/YY)" required />
+      <input type="text" placeholder="CVV" required />
+      <button type="submit">Pay Now</button>
+    </form>
+    <a href="index.html#footer" style="display:block;text-align:center;margin-top:80px;">← Back to Payment Options</a>
+
+  </div>
+</body>
+</html>

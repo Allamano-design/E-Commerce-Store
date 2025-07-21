@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support- Candy Land Shop</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("images/Return policy background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+img.img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-support {
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-support h2 {
+  font-size: 32px;
+  color: #63033e;
+  margin-bottom: 10px;
+}
+
+.contact-support p {
+  color: #034d0b;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+.support-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.support-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #222;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.support-link:hover {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.support-link i {
+  font-size: 18px;
+}
+
+button.home-btn {
+  border: none;
+  border-radius: 10px;
+  background-color: #b0aeae;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.home-btn:hover {
+  background-color: #999;
+}
+
+/* Responsive styles */
+
+/* Small devices (phones ≤ 600px) */
+@media (max-width: 600px) {
+  .contact-support {
+    padding: 20px 15px;
+  }
+
+  .contact-support h2 {
+    font-size: 24px;
+  }
+
+  .contact-support p {
+    font-size: 15px;
+  }
+
+  .support-options {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  img.img {
+    max-height: 300px;
+  }
+}
+
+/* Medium devices (tablets 601px – 992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  .contact-support {
+    padding: 30px 25px;
+  }
+
+  .contact-support h2 {
+    font-size: 28px;
+  }
+
+  .contact-support p {
+    font-size: 16px;
+  }
+
+  .support-options {
+    gap: 15px;
+  }
+
+  img.img {
+    max-height: 400px;
+  }
+}
+
+/* Large devices (≥993px) */
+@media (min-width: 993px) {
+  .contact-support {
+    padding: 50px 30px;
+  }
+
+  .contact-support h2 {
+    font-size: 36px;
+  }
+
+  .contact-support p {
+    font-size: 20px;
+  }
+
+  .support-options {
+    gap: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+  <img src="images/Contactsupport image.jpg" class="img" alt="contact-support">
+    <section class="contact-support">
+  <h2>Contact Support</h2>
+  <p>Need help? We're here for you 24/7. Reach us via the options below:</p>
+
+  <div class="support-options">
+    <a href="tel:+254769610343" class="support-link">
+      <i class="fas fa-phone"></i> +254 769 610343
+    </a>
+    <a href="mailto:allamanojoseph00@gmail.com" class="support-link">
+      <i class="fas fa-envelope"></i> Email Us
+    </a>
+    <a href="https://wa.me/254769610343" class="support-link" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp Support
+    </a>
+    <a href="https://maps.google.com" class="support-link" target="_blank">
+      <i class="fas fa-map-marker-alt"></i> Locate Us
+    </a>
+  </div>
+
+      <a href="index.html#footer" style="display:block;text-align:center;margin-top:10px;">
+        <button class="home-btn">← Back to Home</button>
+      </a>
+</section>
+
+</body>
+</html>

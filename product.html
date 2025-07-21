@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Candy Land Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+      .small-container {
+        padding: 20px 0;
+        margin-top: 50px;
+        padding-top: 80px;
+        width: 100%;
+        height: 100%;
+      }
+      .row {
+        display: flex;
+        max-width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        background-color: rgb(247, 168, 168);
+      }
+       .row img{
+        width: 170px;
+        height: 180px;
+       }
+      .section-details {
+        display: flex;
+        width: 90%;
+        padding: 120px;
+        align-items: center;
+        gap: 0px;
+        justify-content: space-between;
+      }
+      .col-1 img {
+        display: flex;
+        flex-wrap: wrap;
+        width: 70px;
+        height: 80px;
+        max-width: 350px;
+        height: auto;
+        border-radius: 8px;
+      }
+      .col-2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 50%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        gap: 1rem;
+        position: relative;
+      }
+      .col-2 h4, .col-2 h5 {
+        font-weight: 800;
+        color: #6d011e;
+        font-family: sans-serif;
+      }
+      .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .card:hover {
+        transform: scale(1.03);
+      }
+      .card h2 {
+        font-weight: 700;
+        font-size: medium;
+        font-family: monospace;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .small-img-row {
+        display: flex;
+        justify-content: start;
+        gap: 10px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        max-width: 350px;
+      }
+      .small-img-col {
+        flex: 0 0 auto;
+        cursor: pointer;
+      }
+      .small-img {
+        width: 50px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 2px solid #ccc;
+        transition: 0.3s ease, border-color 0.3s ease;
+      }
+      .small-img:hover {
+        border-color: #7b3cf8;
+        transform: scale(1.05);
+      }
+      .small-img-row{
+        width: 120%;
+        height: auto;
+      }
+      .small-img-row img{
+        width: 110px;
+        height: 100px;
+      }
+      .Cart-title{
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #4c06a7;
+      }
+      .checkout-btn, .close-btn{
+        margin-top: 40px;
+        margin-bottom: 2rem;
+        gap: 10px;
+        justify-content: space-between;
+      }
+      .close-btn{
+        align-items: center;
+        margin-left: 6rem;
+        margin-top: 4rem;
+      }
+      /* ==== Responsive Media Queries ==== */
+/* RESET OVERFLOW ISSUES */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* GLOBAL CONTAINERS */
+.section-details, .row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Small Devices (≤600px) */
+@media (max-width: 600px) {
+  .section-details {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .col-1, .col-2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .col-2 h1 {
+    font-size: 22px;
+  }
+
+  .col-2 p {
+    font-size: 15px;
+  }
+
+  .small-img-row {
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .small-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+  }
+
+  .checkout-btn, .close-btn {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+/* Medium Devices (601px – 992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  .section-details {
+    flex-direction: column;
+    padding: 30px 40px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .col-1, .col-2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .small-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .footer-column {
+    width: 48%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Large Devices (≥993px) */
+@media (min-width: 993px) {
+  .section-details {
+    flex-direction: row;
+    padding: 50px 80px;
+  }
+
+  .row {
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .col-1, .col-2 {
+    width: 48%;
+  }
+
+  .small-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+  }
+
+  .footer-column {
+    width: 22%;
+  }
+}
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+<!--Navbar-->
+<div class="header">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <img src="images/logo 2.png" width="170px">
+      </div>
+
+      <nav>
+        <ul id="navbar">
+          <li class="hideOnMobile"><a href="#home">Home</a></li>
+          <li class="hideOnMobile"><a href="#products">Products</a></li>
+          <li class="hideOnMobile"><a href="#about">About</a></li>
+          <li class="hideOnMobile"><a href="#contact">Contact</a></li>
+          <li class="hideOnMobile"><a href="#account">Account</a></li>
+          <li class="menu-button" onclick="showSidebar()">
+            <button id="menu-open-button" class="fas fa-bars"></button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Cart Sidebar -->
+<div id="cart-sidebar" style="
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background-color: #c7c5c5;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow-y: auto;
+    display: none;
+    z-index: 9999;
+">
+  <h3 class="Cart-title">🛒 Your Cart</h3>
+  <div id="cart-items"></div>
+  <hr>
+  <p><strong>Total:</strong> <span id="cart-total">KES 0</span></p>
+  <button onclick="checkout()" class="checkout-btn">Checkout</button>
+
+      <!-- Payment Methods -->
+    <div class="footer-column">
+      <h4>Payment Methods</h4>
+      <div class="payment-item">
+        <img src="images/mpesa logo.png" alt="mpesa">
+        <img src="images/visa logo.jpg" alt="visa">
+        <img src="images/paypal.png" alt="paypal">
+        <img src="images/airtel logo.png" alt="airtel">
+      </div>
+    </div>
+
+  <button onclick="closeCart()" class="close-btn">Close</button>
+</div>
+
+
+      <!-- Floating Cart Button with Count -->
+<div style="position: fixed; right: 20px; bottom: 20px; z-index: 9999;">
+  <button onclick="openCart()" style="
+    background: #7b3cf8;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;">
+    <i class="fas fa-shopping-cart">
+    </i>
+    <span id="cart-count" style="
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: red;
+      color: white;
+      font-size: 14px;
+      padding: 2px 6px;
+      border-radius: 50%;
+      display: none;
+    ">0</span>
+  </button>
+</div>
+
+
+      <div class="search-box hideOnMobile">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="searchBrands()"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+    <ul class="sidebar">
+      <li class="close-button" onclick="hideSidebar()">
+        <button id="menu-close-button" class="fas fa-times"></button>
+      </li>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#latest-products">Products</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="#payment">Contact</a></li>
+      <li><a href="#footer">Account</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Single product details -->
+<section class="small-container" id="products">
+  <div class="section-details">
+    <div class="row">
+             <!-- Main Product Display -->
+        <img id="product-img" src="" alt="Ajab" />
+        <div class="col-1">
+        <!-- Thumbnail Options -->
+        <div class="small-img-row" id="thumbnail-gallery"></div>
+      </div>
+
+      <div class="rating">
+        <div class="card">
+          <h2>Review</h2>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
+
+      <div class="col-2">
+        <h5>Product Category</h5>
+        <h1 id="product-name">Product Name</h1>
+        <h4 id="product-price">Kes 0</h4>
+        <select>
+          <option>Select Option</option>
+        </select>
+        <input type="number" value="1">
+        <h3>Product Details</h3>
+        <p id="product-description">Product description goes here.</p>
+
+        <button class="add-to-cart" onclick="handleAddToCart()">
+            <i class="fas fa-cart-arrow-down"></i> Add to Cart
+          </button>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    //menu btn function//
+    function showSidebar(){
+  const sidebar = document.querySelector('.sidebar')
+  sidebar.style.display = 'flex'
+}
+function hideSidebar(){
+   const sidebar = document.querySelector('.sidebar')
+  sidebar.style.display = 'none'
+}
+
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name");
+  const price = params.get("price");
+  const image = params.get("image");
+  const desc = params.get("desc");
+  const thumbs = (params.get("thumbnails") || "").split(',');
+  const names = (params.get("names") || "").split(',');
+  const prices = (params.get("prices") || "").split(',');
+  const descs = (params.get("descs") || "").split(',');
+
+  document.getElementById("product-name").textContent = name;
+  document.getElementById("product-price").textContent = "KES " + price;
+  document.getElementById("product-img").src = image;
+  document.getElementById("product-description").textContent = desc;
+
+  const gallery = document.getElementById("thumbnail-gallery");
+  gallery.innerHTML = "";
+
+  thumbs.forEach((src, i) => {
+    const div = document.createElement("div");
+    div.className = "small-img-col";
+    div.innerHTML = `<img class="small-img" src="${src.trim()}" data-name="${names[i] || name}" data-price="${prices[i] || ('KES ' + price)}" data-desc="${descs[i] || desc}">`;
+    gallery.appendChild(div);
+  });
+
+  document.getElementById("thumbnail-gallery").addEventListener("click", function(e) {
+    if (e.target.classList.contains("small-img")) {
+      document.getElementById("product-img").src = e.target.src;
+
+      const name = e.target.getAttribute("data-name");
+      const price = e.target.getAttribute("data-price");
+      const desc = e.target.getAttribute("data-desc");
+
+      if (name) document.getElementById("product-name").textContent = name;
+      if (price) document.getElementById("product-price").textContent = price;
+      if (desc) document.getElementById("product-description").textContent = desc;
+    }
+  });
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function handleAddToCart() {
+  const name = document.getElementById("product-name").textContent;
+  const priceText = document.getElementById("product-price").textContent;
+  const price = parseInt(priceText.replace(/[^\d]/g, ""));
+  const image = document.getElementById("product-img").src;
+  const quantity = parseInt(document.querySelector('input[type="number"]').value);
+
+  const product = { name, price, image, quantity };
+
+  // Check if product already exists in cart
+  const existingIndex = cart.findIndex(item => item.name === product.name && item.image === product.image);
+  if (existingIndex > -1) {
+    cart[existingIndex].quantity += product.quantity;
+  } else {
+    cart.push(product);
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Provide user feedback
+  alert(`${product.name} added to cart!`);
+}
+
+//open cart
+function openCart() {
+  renderCart(); // call the function to populate items
+  document.getElementById('cart-sidebar').style.display = 'block';
+}
+
+function closeCart() {
+  document.getElementById('cart-sidebar').style.display = 'none';
+}
+
+function renderCart() {
+  const cartItems = document.getElementById('cart-items');
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  cartItems.innerHTML = '';
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+
+    cartItems.innerHTML += `
+      <div style="margin-bottom: 15px;">
+        <img src="${item.image}" width="50" style="vertical-align: middle;">
+        <strong>${item.name}</strong><br>
+        Price: KES ${item.price} x ${item.quantity} = <strong>KES ${subtotal}</strong>
+        <br><button onclick="removeFromCart(${index})">Remove</button>
+      </div>
+    `;
+  });
+
+  document.getElementById('cart-total').textContent = 'KES ' + total;
+}
+
+//remove from cart
+function removeFromCart(index) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  renderCart();
+}
+
+//cart count
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  const badge = document.getElementById('cart-count');
+  badge.textContent = count;
+  badge.style.display = count > 0 ? 'inline-block' : 'none';
+}
+
+//checkout btn
+function checkout() {
+  alert("Thanks for shopping! Your order will be processed.");
+  localStorage.removeItem('cart');
+  updateCartCount();
+  renderCart();
+  closeCart();
+}
+
+
+
+</script>
+
+<!-- Footer Section -->
+<footer class="footer" id="footer">
+  <div class="footer-container">
+
+    <!-- Company Info -->
+    <div class="footer-column">
+      <h3>Candy Land Shop</h3>
+      <p>Your best online shopping destination. We deliver happiness in every package!</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#Shop By Brand">Brands</a></li>
+        <li><a href="#top picks">Top Picks</a></li>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#Latest Products">Latest Products</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div class="footer-column">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Shipping Info</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-column">
+      <h4>Reach Us</h4>
+      <p><i class="fas fa-phone"></i> +254 769-610343</p>
+      <p><i class="fas fa-envelope"></i> allamanojoseph00@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+    </div>
+
+    <!-- Payment Methods -->
+    <div class="footer-column">
+      <h4>Payment Methods</h4>
+      <div class="payment-item">
+        <a href="tel:*234*1*123456#" class="payment-btn" title="Pay via M-Pesa Till" id="mpesa">
+           <img src="images/mpesa logo.png" alt="mpesa">
+        </a>
+       <a href="visa.html" class="payment-btn" title="Pay with Visa" id="visa">
+        <img src="images/visa logo.jpg" alt="visa">
+      </a>
+        <a href="https://www.paypal.me/yourusername" class="payment-btn" title="Pay with PayPal" target="_blank" id="paypal">
+          <img src="images/paypal.png" alt="paypal">
+        </a>
+         <a href="tel:*222*1*654321#" class="payment-btn" title="Pay via Airtel Money" id="airtel">
+          <img src="images/airtel logo.png" alt="airtel">
+        </a>
+        
+      </div>
+    </div>
+
+  <!-- Social Media (Below Columns) -->
+  <div class="footer-social">
+    <h4>Follow Us</h4>
+    <div class="social-link-list">
+      <a href="https://facebook.com/Manor.Manor?text=Hello%20Allamano"><i class="fab fa-facebook" style="color: #7b3cf8;"></i></a>
+      <a href="https://instagram.com/m_anor_0?text=Hello%20Allamano"><i class="fab fa-instagram" style="color: red;"></i></a>
+      <a href="https://x.com/bitsmanor?text=Hello%20Allamano"><i class="fab fa-x-twitter" style="color: #222;"></i></a>
+      <a href=" https://linkedin.com/in/allamano-joseph?text=Hello%20Allamano"><i class="fab fa-linkedin"style="color: blue;"></i></a>
+      <a href="https://www.tiktok.com/@mano_r72?text=Hello%20Allamano"><i class="fab fa-tiktok" style="color: #210404;"></i></a>
+      <a href="https://www.threads.net/@m_anor_0?text=Hello%20Allamano"><i class="fab fa-threads" style="color: #230404;"></i></a>
+      <a href="https://wa.me/254769610343?text=Hello%20Allamano%2C%20I%20visited%20your%20website!"><i class="fab fa-whatsapp" style="color: #25D366;"></i></a>
+      <a href="#"><i class="fab fa-youtube" style="color:red;"></i></a>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Candy Land Shop. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
