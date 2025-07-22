@@ -1117,7 +1117,7 @@ ul li {
 
 /* ===== Footer Styles ===== */
 .footer {
-  background-image: url('footerbg.jpg');
+  background-image: url("footerbg.jpg");
   color: #fff;
   padding: 40px 20px 20px;
   
