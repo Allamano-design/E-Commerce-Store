@@ -1646,6 +1646,27 @@ body {
 }
 
 
+/* Tablets (≥ 600px) — 3 columns */
+@media (min-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Laptops and small desktops (≥ 992px) — 4 columns */
+@media (min-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large desktops (≥ 1200px) — 5 columns */
+@media (min-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 992px) {
   .offers-and-products {
