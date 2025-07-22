@@ -1117,7 +1117,7 @@ ul li {
 
 /* ===== Footer Styles ===== */
 .footer {
-  background-image: url('images/footerbg.jpg');
+  background-image: url('footerbg.jpg');
   color: #fff;
   padding: 40px 20px 20px;
   
@@ -1298,7 +1298,7 @@ body {
   background: #fffbe9;
   padding: 4rem 5%;
   overflow: hidden;
-  margin-top: 100px;
+  margin-top: 90px;
 }
 
 .hero-content {
@@ -1485,7 +1485,7 @@ body {
   .about-image-wrapper {
     order: -1; /* Move image above text on tablet */
     margin-bottom: 2rem;
-    margin-right: 40px;
+    margin-right: 30px;
   }
 }
 
